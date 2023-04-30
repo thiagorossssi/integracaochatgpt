@@ -8,6 +8,7 @@ O back-end foi implementado utilizando a linguagem PHP onde conta com Controller
 
 
 -- CONFIGURAÇÃO DA API
+
 Acesse o arquivo ./api/Models/Openai.php e no método getConteudoGeradoOpenAI() insira a sua chave de API gerada na página https://platform.openai.com/account/api-keys e atribua à variável $OPENAI_API_KEY.
 
 
