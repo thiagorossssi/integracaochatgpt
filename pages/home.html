@@ -1,0 +1,292 @@
+<style>
+    .container {
+        background-color: #1d428a;
+        border-radius: 3px;
+    }
+
+    h1 {
+        font-size: 3em;
+        padding: 0 25px;
+    }
+
+    h1 span {
+        font-weight: 600;
+        color: #991B1E;
+    }
+
+    h5 {
+        margin-bottom: 15px;
+    }
+
+    .icon-block img {
+        width: 100%;
+    }
+
+    .tr-fieldset {
+        border-color: #f48326;
+        border-style: double;
+        background-color: #fff;
+        margin: 15px;
+    }
+
+    .tr-fieldset legend {
+        padding: 0 10px;
+        font-weight: bolder;
+        background-color: #f48326;
+        border-radius: 3px;
+        color: #fff;
+        text-shadow: 1px 1px 2px #242424;
+        font-size: 1.2em;
+    }
+
+    .tr-painel-btn {
+        height: auto;
+        margin-top:30px;
+    }
+
+    .tr-painel-btn a {
+        background-color: #464646;
+        border-radius: 3px;
+        margin-top: 15px;
+    }
+
+    .tr-painel-btn a:hover {
+        background-color: #f48326;
+    }
+
+    .tr-fieldset i {
+        color: #fff;
+    }
+
+    .tr-moldura {
+        width: 10%;
+        margin: 25px auto;
+    }
+
+    .tr-conteudo-criado p {
+        padding: 25px;
+        text-align: justify;
+        font-size: 1.2em;
+    }
+
+    .tr-fieldset .input-field {
+        margin-top: 35px;
+    }
+
+    .tr-container-motivacional {
+        margin-top: 75px;
+    }
+
+    @media only screen and (max-width: 320px) {
+        .tr-moldura {
+            width: 50%;
+        }
+
+        .tr-fieldset img {
+            display: none;
+        }
+
+        .tr-fieldset .input-field label{
+            font-size: 0.75em;
+        }
+
+        .tr-painel-btn a {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (min-width: 321px) and (max-width: 375px) {
+        .tr-moldura {
+            width: 50%;
+        }
+
+        .tr-fieldset img {
+            display: none;
+        }
+
+        .tr-fieldset .input-field label{
+            font-size: 0.9em;
+        }
+
+        .tr-painel-btn a {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (min-width: 376px) and (max-width: 425px) {
+        .tr-moldura {
+            width: 50%;
+        }
+
+        .tr-fieldset img {
+            display: none;
+        }
+
+        .tr-painel-btn a {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (min-width: 426px) and (max-width: 768px) {
+        .tr-moldura {
+            width: 15%;
+        }
+
+        .tr-fieldset img {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .tr-fieldset .input-field {
+            margin-top: 0;
+        }
+
+        .tr-painel-btn {
+            margin-top:-5px;
+        }
+    }
+
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        .tr-moldura {
+            width: 15%;
+        }
+
+        .tr-fieldset img {
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .tr-fieldset .input-field {
+            margin-top: 0;
+        }
+
+        .tr-painel-btn {
+            margin-top:-5px;
+        }
+    }
+
+    @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+        .tr-fieldset img {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .tr-fieldset .input-field {
+            margin-top: 15px;
+        }
+
+        .tr-painel-btn {
+            margin-top: 15px;
+        }
+    }
+
+    @media only screen and (min-width: 1441px) {
+        .tr-fieldset img {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .tr-fieldset .input-field {
+            margin-top: 25px;
+        }
+
+        .tr-painel-btn {
+            margin-top: 30px;
+        }
+    }
+</style>
+
+<div class="tr-moldura">
+    <img src="./assets/images/site/moldura.png" alt="Moldura" class="responsive-img" />
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <fieldset class="tr-fieldset">
+                <legend>INTEGRAÇÃO CHATGPT VIA PHP API</legend>
+                <div class="col s12 m1 l1 center">
+                    <img src="./assets/images/site/logo.png" class="responsive-img center" alt="KJJ-IA">
+                </div>
+                <div class="input-field col s12 m10 l10" id="tr-descricao">
+                    <input  id="desc-tr" type="text" class="validate">
+                    <label for="desc-tr">O que você deseja saber sobre o jiu-jitsu?</label>
+                </div>
+                <div class="col s12 m1 l1 tr-painel-btn center" id="tr-gera-conteudo-btn">
+                    <a class="waves-effect waves-light btn">
+                        <i class="material-icons">search</i>
+                    </a>
+                </div>
+            </fieldset>
+        </div>
+	</div>
+</div>
+
+<div class="tr-moldura hide" id="tr-moldura">
+    <img src="./assets/images/site/moldura.png" alt="Moldura" class="responsive-img" />
+</div>
+
+<div class="container hide" id="tr-conteudo-gerado">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <fieldset class="tr-fieldset">
+                <legend>RESPOSTA DO CHATGPT</legend>
+                <div class="tr-conteudo-criado"></div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<script>
+    const BASE = window.location.origin+'/chatgpt';
+
+    $('#tr-gera-conteudo-btn').on('click', () => {
+            if($('#desc-tr').val() == '') {
+                $.notify('Você precisa me informar alguma coisa para que eu possa te ajudar!', "error");
+            } else {
+                $.ajax({
+                    url: BASE+'/api/get/getStatusKeyWord',
+                    type: 'POST',
+                    data: {
+                        'descricao': $('#desc-tr').val()
+                    }
+                }).done((resp) => {
+                    if(resp == 'true') {
+                        $.ajax({
+                            url: BASE+'/api/get/getConteudoGeradoOpenAI',
+                            type: 'POST',
+                            data: {
+                                'conteudo': $('#desc-tr').val()
+                            },
+                            beforeSend: () => {
+                                $('.tr-loader').delay(1000).fadeIn('slow');
+                            },
+                            complete: () => {
+                                $('.tr-loader').delay(1000).fadeOut('slow');
+                            }
+                        }).done((resp) => {
+                            /*
+                                NECESSÁRIO DAR UM PARSE DUAS VEZES POIS NA PRIMEIRA CONVERTE RESP EM STRING E DEPOIS
+                                PARA UM OBJETO
+                            */
+                            let obj = JSON.parse(JSON.parse(resp));
+                            if (obj != null || obj != undefined) {
+                                $('#tr-moldura').removeClass('hide');
+                                $('#tr-conteudo-gerado').removeClass('hide');
+                                $('.tr-conteudo-criado').append('<p>'+obj.choices[0].message.content+'</p>');
+                            } else {
+                                $.notify('Erro ao gerar conteúdo!', "error");
+                            }
+                        }).fail( ()=> {
+                            $.notify('Erro ao conectar com a IA!', "error");
+                        });
+                    } else {
+                        $.notify('Sempre use as palavras "jiu-jitsu" ou "bjj" em sua busca e verifique se escreveu da forma correta.', "info");
+                        $.notify('Vamos conversar sobre jiu-jitsu,ok?', "error");
+                    }
+                }).fail( ()=> {
+                    $.notify('Erro ao validar sua questão!', "error");
+                });
+            }
+        });
+</script>
